@@ -62,7 +62,7 @@ void MainWindow::generateEasyDivisionProblem(){
 void MainWindow::generateEasyExponentProblem(){
     operand1 = generateRandomNumber(1,10);
     operand2 = generateRandomNumber(1,10);
-    correctAnswer = operand1^operand2;
+    correctAnswer = pow(operand1, operand2);
 }
 
 void MainWindow::generateMediumAdditionProblem(){
@@ -95,7 +95,7 @@ void MainWindow::generateMediumDivisionProblem(){
 void MainWindow::generateMediumExponentProblem(){
     operand1 = generateRandomNumber(1,100);
     operand2 = generateRandomNumber(1,100);
-    correctAnswer = operand1^operand2;
+    correctAnswer = pow(operand1, operand2);
 }
 void MainWindow::generateHardAdditionProblem(){
     //Generate random 2 operands and create a correctAnswer using them
@@ -126,7 +126,7 @@ void MainWindow::generateHardDivisionProblem(){
 void MainWindow::generateHardExponentProblem(){
     operand1 = generateRandomNumber(1,1000);
     operand2 = generateRandomNumber(1,1000);
-    correctAnswer = operand1^operand2;
+    correctAnswer = pow(operand1, operand2);
 }
 void MainWindow::generateProblem(){
    if(operatorSign == "+"){
@@ -240,16 +240,11 @@ void MainWindow::on_actionHard_5_triggered()
 }
 
 void MainWindow::begin()
-{
+
     generateProblem();
     displayProblem();
     ui->txtAnswerInput->setEnabled(true);
     ui->btnAnswer->setEnabled(true);
-
-}
-
-void MainWindow::on_btnNextProblem_clicked()
-{
 
 }
 
@@ -258,3 +253,4 @@ void MainWindow::on_btnGetCorrectAnswer_clicked()
     QString QstrCorrectAnswer = QString::number(correctAnswer);
     ui->txtAnswerInput->setText(QstrCorrectAnswer);
 }
+
