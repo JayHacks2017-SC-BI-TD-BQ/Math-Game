@@ -27,13 +27,19 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *actionStart_Game;
-    QAction *actionEnd_Game;
+    QAction *actionEasy_5;
+    QAction *actionMedium_5;
+    QAction *actionHard_5;
+    QAction *actionAddition;
+    QAction *actionSubstraction;
+    QAction *actionMultiplication;
+    QAction *actionDivision;
     QWidget *centralWidget;
     QLabel *lblDisplay;
     QPlainTextEdit *txtAnswerInput;
     QPushButton *btnAnswer;
     QMenuBar *menuBarGame;
+    QMenu *menuDifficulty;
     QMenu *menuMenu;
 
     void setupUi(QMainWindow *MainWindow)
@@ -41,10 +47,20 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(583, 207);
-        actionStart_Game = new QAction(MainWindow);
-        actionStart_Game->setObjectName(QStringLiteral("actionStart_Game"));
-        actionEnd_Game = new QAction(MainWindow);
-        actionEnd_Game->setObjectName(QStringLiteral("actionEnd_Game"));
+        actionEasy_5 = new QAction(MainWindow);
+        actionEasy_5->setObjectName(QStringLiteral("actionEasy_5"));
+        actionMedium_5 = new QAction(MainWindow);
+        actionMedium_5->setObjectName(QStringLiteral("actionMedium_5"));
+        actionHard_5 = new QAction(MainWindow);
+        actionHard_5->setObjectName(QStringLiteral("actionHard_5"));
+        actionAddition = new QAction(MainWindow);
+        actionAddition->setObjectName(QStringLiteral("actionAddition"));
+        actionSubstraction = new QAction(MainWindow);
+        actionSubstraction->setObjectName(QStringLiteral("actionSubstraction"));
+        actionMultiplication = new QAction(MainWindow);
+        actionMultiplication->setObjectName(QStringLiteral("actionMultiplication"));
+        actionDivision = new QAction(MainWindow);
+        actionDivision->setObjectName(QStringLiteral("actionDivision"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         lblDisplay = new QLabel(centralWidget);
@@ -60,14 +76,21 @@ public:
         menuBarGame = new QMenuBar(MainWindow);
         menuBarGame->setObjectName(QStringLiteral("menuBarGame"));
         menuBarGame->setGeometry(QRect(0, 0, 583, 22));
+        menuDifficulty = new QMenu(menuBarGame);
+        menuDifficulty->setObjectName(QStringLiteral("menuDifficulty"));
         menuMenu = new QMenu(menuBarGame);
         menuMenu->setObjectName(QStringLiteral("menuMenu"));
         MainWindow->setMenuBar(menuBarGame);
 
         menuBarGame->addAction(menuMenu->menuAction());
-        menuMenu->addAction(actionStart_Game);
-        menuMenu->addSeparator();
-        menuMenu->addAction(actionEnd_Game);
+        menuBarGame->addAction(menuDifficulty->menuAction());
+        menuDifficulty->addAction(actionEasy_5);
+        menuDifficulty->addAction(actionMedium_5);
+        menuDifficulty->addAction(actionHard_5);
+        menuMenu->addAction(actionAddition);
+        menuMenu->addAction(actionSubstraction);
+        menuMenu->addAction(actionMultiplication);
+        menuMenu->addAction(actionDivision);
 
         retranslateUi(MainWindow);
 
@@ -77,11 +100,17 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Math Game", Q_NULLPTR));
-        actionStart_Game->setText(QApplication::translate("MainWindow", "Start Game", Q_NULLPTR));
-        actionEnd_Game->setText(QApplication::translate("MainWindow", "End Game", Q_NULLPTR));
+        actionEasy_5->setText(QApplication::translate("MainWindow", "Easy", Q_NULLPTR));
+        actionMedium_5->setText(QApplication::translate("MainWindow", "Medium", Q_NULLPTR));
+        actionHard_5->setText(QApplication::translate("MainWindow", "Hard", Q_NULLPTR));
+        actionAddition->setText(QApplication::translate("MainWindow", "Addition", Q_NULLPTR));
+        actionSubstraction->setText(QApplication::translate("MainWindow", "Substraction", Q_NULLPTR));
+        actionMultiplication->setText(QApplication::translate("MainWindow", "Multiplication", Q_NULLPTR));
+        actionDivision->setText(QApplication::translate("MainWindow", "Division", Q_NULLPTR));
         lblDisplay->setText(QApplication::translate("MainWindow", "Please start a game with a selected difficulty in the menu.", Q_NULLPTR));
         btnAnswer->setText(QApplication::translate("MainWindow", "Answer", Q_NULLPTR));
-        menuMenu->setTitle(QApplication::translate("MainWindow", "Menu", Q_NULLPTR));
+        menuDifficulty->setTitle(QApplication::translate("MainWindow", "Difficulty", Q_NULLPTR));
+        menuMenu->setTitle(QApplication::translate("MainWindow", "Operator Sign", Q_NULLPTR));
     } // retranslateUi
 
 };
