@@ -40,12 +40,12 @@ void MainWindow::generateEasyAdditionProblem(){
 void MainWindow::generateEasySubtractionProblem(){
     operand1 = generateRandomNumber(1,100);
     operand2 = generateRandomNumber(1,100);
-    correctAnswer = operand1- operand2;
+    correctAnswer = operand1-operand2;
 }
 void MainWindow::generateEasyMultiplicationProblem(){
     operand1 = generateRandomNumber(1,100);
     operand2 = generateRandomNumber(1,100);
-    correctAnswer = operand1 * operand2;
+    correctAnswer = operand1*operand2;
 }
 
 void MainWindow::generateEasyDivisionProblem(){
@@ -109,19 +109,19 @@ void MainWindow::generateHardDivisionProblem(){
 void MainWindow::generateProblem(){
    if(operatorSign == "+"){
        if(difficulty == "easy"){
-
+            generateEasyAdditionProblem();
        }else if(difficulty == "medium"){
-
+            generateMediumAdditionProblem();
        }else if(difficulty == "hard"){
-
+            generateHardAdditionProblem();
        }
    }else if(operatorSign == "-"){
        if(difficulty == "easy"){
-
+            generateEasySubtractionProblem();
        }else if(difficulty == "medium"){
-
+            generateMediumSubtractionProblem();
        }else if(difficulty == "hard"){
-
+            generateHardSubtractionProblem();
        }
    }else if(operatorSign == "*"){
        if(difficulty == "easy"){
@@ -129,7 +129,7 @@ void MainWindow::generateProblem(){
        }else if(difficulty == "medium"){
             generateMediumMultiplicationProblem();
        }else if(difficulty == "hard"){
-
+            generateHardMultiplicationProblem();
        }
    }else if(operatorSign == "/"){
        if(difficulty == "easy"){
@@ -137,7 +137,7 @@ void MainWindow::generateProblem(){
        }else if(difficulty == "medium"){
             generateMediumDivisionProblem();
        }else if(difficulty == "hard"){
-
+            generateHardDivisionProblem();
        }
    }
 }
