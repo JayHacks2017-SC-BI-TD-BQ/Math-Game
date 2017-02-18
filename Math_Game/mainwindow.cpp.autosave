@@ -128,9 +128,11 @@ void MainWindow::generateHardAdditionProblem(){
 }
 
 void MainWindow::generateHardMultiplicationProblem() {
-    while ((operand1 == 0) || (operand2 == 0) || (operand1%10 == 0) || (operand2%10 == 0)){
+    while ((operand1 == 0) || (operand2 == 0) || (operand1%10 == 0) || (operand2%10 == 0)) {
         operand1 = generateRandomNumber(100,1000);
+        operand2 = generateRandomNumber(100,1000);
     }
+    correctAnswer = operand1 * operand2;
 }
 
 void MainWindow::displayProblem(){
