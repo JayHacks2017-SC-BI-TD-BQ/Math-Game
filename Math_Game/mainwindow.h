@@ -25,18 +25,13 @@ public:
     void generateMediumSubtractionProblem();
     void generateMediumMultiplicationProblem();
     void generateMediumDivisionProblem();
-    void generateDifficultAdditionProblem();
-    void generateDifficultSubtractionProblem();
-    void generateDifficultMultiplicationProblem();
-    void generateDifficultDivisionProblem();
-
 
     void displayProblem();
-
+    void generateHardMultiplicationProblem();
+    void begin();
 
 private slots:
     void on_btnAnswer_clicked();
-    void startGame();
 
     void on_actionAddition_triggered();
 
@@ -45,6 +40,12 @@ private slots:
     void on_actionMultiplication_triggered();
 
     void on_actionDivision_triggered();
+
+    void on_actionEasy_5_triggered();
+
+    void on_actionMedium_5_triggered();
+
+    void on_actionHard_5_triggered();
 
 private:
     Ui::MainWindow *ui;
