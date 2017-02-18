@@ -23,9 +23,16 @@ public:
 
 private slots:
     void on_btnAnswer_clicked();
+    void startGame();
+    void endGame();
 
 private:
     Ui::MainWindow *ui;
+
+    void addMenuOptions();
+
+
+
     int operand1, operand2, correctAnswer;
 };
 

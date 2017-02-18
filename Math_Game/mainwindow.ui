@@ -62,7 +62,7 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QMenuBar" name="menuBar">
+  <widget class="QMenuBar" name="menuBarGame">
    <property name="geometry">
     <rect>
      <x>0</x>

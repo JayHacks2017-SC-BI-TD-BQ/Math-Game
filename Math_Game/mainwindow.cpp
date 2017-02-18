@@ -27,8 +27,14 @@ void MainWindow::generateEasyAdditionProblem(){
     //Generate random 2 operands and create a correctAnswer using them
 }
 void MainWindow::generateEasySubtractionProblem(){
-
+    //Comment
 }
 void MainWindow::generateEasyMultiplicationProblem(){
 
 }
+
+void MainWindow::addMenuOptions(){
+    ui->menuBarGame->addAction();
+}
+
+

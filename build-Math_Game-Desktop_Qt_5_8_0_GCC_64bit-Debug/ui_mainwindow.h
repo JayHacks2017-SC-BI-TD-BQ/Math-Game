@@ -32,7 +32,7 @@ public:
     QPlainTextEdit *txtAnswerInput;
     QPushButton *btnAnswer;
     QToolBar *toolBar;
-    QMenuBar *menuBar;
+    QMenuBar *menuBarGame;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -54,10 +54,10 @@ public:
         toolBar = new QToolBar(MainWindow);
         toolBar->setObjectName(QStringLiteral("toolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
-        menuBar = new QMenuBar(MainWindow);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 583, 22));
-        MainWindow->setMenuBar(menuBar);
+        menuBarGame = new QMenuBar(MainWindow);
+        menuBarGame->setObjectName(QStringLiteral("menuBarGame"));
+        menuBarGame->setGeometry(QRect(0, 0, 583, 22));
+        MainWindow->setMenuBar(menuBarGame);
 
         retranslateUi(MainWindow);
 
