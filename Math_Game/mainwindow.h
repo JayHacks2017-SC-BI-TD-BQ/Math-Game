@@ -25,6 +25,11 @@ public:
     void generateMediumSubtractionProblem();
     void generateMediumMultiplicationProblem();
     void generateMediumDivisionProblem();
+    void generateHardAdditionProblem();
+    void generateHardSubtractionProblem();
+    void generateHardMultiplicationProblem();
+    void generateHardDivisionProblem();
+    void generateProblem();
 
     void displayProblem();
     void generateHardMultiplicationProblem();
