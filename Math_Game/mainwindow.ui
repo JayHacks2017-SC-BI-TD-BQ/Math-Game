@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>585</width>
-    <height>155</height>
+    <width>643</width>
+    <height>147</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>561</width>
-      <height>61</height>
+      <width>591</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -44,7 +44,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>130</x>
       <y>70</y>
       <width>89</width>
       <height>25</height>
@@ -62,7 +62,7 @@
      <rect>
       <x>10</x>
       <y>70</y>
-      <width>141</width>
+      <width>111</width>
       <height>25</height>
      </rect>
     </property>
@@ -70,9 +70,9 @@
    <widget class="QLabel" name="lblCorrect">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>230</x>
       <y>70</y>
-      <width>101</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -86,14 +86,27 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>300</x>
       <y>70</y>
-      <width>211</width>
+      <width>121</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
      <string>Next Problem</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnGetCorrectAnswer">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>70</y>
+      <width>171</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Get Correct Answer</string>
     </property>
    </widget>
   </widget>
@@ -113,8 +126,9 @@
    <addaction name="separator"/>
    <addaction name="actionAddition"/>
    <addaction name="actionSubstraction"/>
-   <addaction name="actionMultiplication"/>
    <addaction name="actionDivision"/>
+   <addaction name="actionMultiplication"/>
+   <addaction name="actionExponent"/>
   </widget>
   <action name="actionEasy_5">
    <property name="text">
@@ -149,6 +163,14 @@
   <action name="actionDivision">
    <property name="text">
     <string>Division</string>
+   </property>
+  </action>
+  <action name="actionExponent">
+   <property name="text">
+    <string>Exponent</string>
+   </property>
+   <property name="toolTip">
+    <string>Exponent</string>
    </property>
   </action>
  </widget>

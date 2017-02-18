@@ -13,9 +13,10 @@
 # Qt-es
 
 /.qmake.cache
+Math_Game/Math_Game.pro.user
 /.qmake.stash
 */*.pro.user
-*.pro.user.*
+*/*.pro.user.*
 *.qbs.user
 *.qbs.user.*
 *.moc
