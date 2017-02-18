@@ -124,6 +124,12 @@ void MainWindow::generateMediumDivisionProblem(){
     correctAnswer = operand1 / operand2;
 }
 
+void MainWindow::generateHardAdditionProblem(){
+    operand1 = generateRandomNumber(1,10000);
+    operand2 = generateRandomNumber(1,10000);
+    correctAnswer = operand1+operand2;
+}
+
 void MainWindow::displayProblem(){
     ui->lblDisplay->setText(QString::number(operand1) + operatorSign + QString::number(operand2));
 }
