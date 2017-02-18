@@ -14,7 +14,7 @@
 
 /.qmake.cache
 /.qmake.stash
-Math_Game/*.pro.user
+*/*.pro.user
 *.pro.user.*
 *.qbs.user
 *.qbs.user.*
