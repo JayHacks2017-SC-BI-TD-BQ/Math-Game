@@ -21,14 +21,17 @@ public:
     void generateEasySubtractionProblem();
     void generateEasyMultiplicationProblem();
     void generateEasyDivisionProblem();
+    void generateEasyExponentProblem();
     void generateMediumAdditionProblem();
     void generateMediumSubtractionProblem();
     void generateMediumMultiplicationProblem();
     void generateMediumDivisionProblem();
+    void generateMediumExponentProblem();
     void generateHardAdditionProblem();
     void generateHardSubtractionProblem();
     void generateHardMultiplicationProblem();
     void generateHardDivisionProblem();
+    void generateHardExponentProblem();
     void generateProblem();
     void displayProblem();
     void begin();
