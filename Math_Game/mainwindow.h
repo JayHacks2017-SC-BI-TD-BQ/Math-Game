@@ -25,6 +25,7 @@ public:
     void generateProblem();
     void generateMediumMultiplicationProblem();
     void displayProblem();
+    void generateHardMultiplicationProblem();
     void begin();
 
 private slots:
