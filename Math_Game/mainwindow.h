@@ -20,11 +20,22 @@ public:
     void generateEasyAdditionProblem();
     void generateEasySubtractionProblem();
     void generateEasyMultiplicationProblem();
+    void generateEasyDivisionProblem();
+
+    void displayProblem();
+
 
 private slots:
     void on_btnAnswer_clicked();
     void startGame();
-    void on_actionStart_Game_triggered();
+
+    void on_actionAddition_triggered();
+
+    void on_actionSubstraction_triggered();
+
+    void on_actionMultiplication_triggered();
+
+    void on_actionDivision_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -32,7 +43,8 @@ private:
 
 
 
-    int operand1, operand2, correctAnswer, secondsRemaining;
+    int operand1, operand2, correctAnswer;
+    QString difficulty, operatorSign;
 };
 
 #endif // MAINWINDOW_H

@@ -60,24 +60,59 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuDifficulty">
+    <property name="title">
+     <string>Difficulty</string>
+    </property>
+    <addaction name="actionEasy_5"/>
+    <addaction name="actionMedium_5"/>
+    <addaction name="actionHard_5"/>
+   </widget>
    <widget class="QMenu" name="menuMenu">
     <property name="title">
-     <string>Menu</string>
+     <string>Operator Sign</string>
     </property>
-    <addaction name="actionStart_Game"/>
-    <addaction name="separator"/>
-    <addaction name="actionEnd_Game"/>
+    <addaction name="actionAddition"/>
+    <addaction name="actionSubstraction"/>
+    <addaction name="actionMultiplication"/>
+    <addaction name="actionDivision"/>
    </widget>
    <addaction name="menuMenu"/>
+   <addaction name="menuDifficulty"/>
   </widget>
-  <action name="actionStart_Game">
+  <action name="actionEasy_5">
    <property name="text">
-    <string>Start Game</string>
+    <string>Easy</string>
    </property>
   </action>
-  <action name="actionEnd_Game">
+  <action name="actionMedium_5">
    <property name="text">
-    <string>End Game</string>
+    <string>Medium</string>
+   </property>
+  </action>
+  <action name="actionHard_5">
+   <property name="text">
+    <string>Hard</string>
+   </property>
+  </action>
+  <action name="actionAddition">
+   <property name="text">
+    <string>Addition</string>
+   </property>
+  </action>
+  <action name="actionSubstraction">
+   <property name="text">
+    <string>Substraction</string>
+   </property>
+  </action>
+  <action name="actionMultiplication">
+   <property name="text">
+    <string>Multiplication</string>
+   </property>
+  </action>
+  <action name="actionDivision">
+   <property name="text">
+    <string>Division</string>
    </property>
   </action>
  </widget>
