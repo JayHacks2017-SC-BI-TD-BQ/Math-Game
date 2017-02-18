@@ -6,39 +6,55 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>583</width>
+    <height>207</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Math Game</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QLabel" name="lblDisplay">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>150</y>
+      <x>10</x>
+      <y>10</y>
+      <width>561</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Please start a game with a selected difficulty in the menu.</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="txtAnswerInput">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>130</y>
+      <width>211</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAnswer">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>130</y>
       <width>89</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Answer</string>
     </property>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>400</width>
-     <height>22</height>
-    </rect>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
    </property>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
@@ -46,7 +62,16 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>583</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
