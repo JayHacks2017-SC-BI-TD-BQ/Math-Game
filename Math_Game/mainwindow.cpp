@@ -23,6 +23,8 @@ void MainWindow::on_btnAnswer_clicked()
 {
     //ui->lblDisplay->setText(QString::number(generateRandomNumber(1,100))); //DEBUG
 }
+
+//int operand1, operand2, correctAnswer; //These are your integers.
 void MainWindow::generateEasyAdditionProblem(){
     //Generate random 2 operands and create a correctAnswer using them
 }
@@ -32,9 +34,3 @@ void MainWindow::generateEasySubtractionProblem(){
 void MainWindow::generateEasyMultiplicationProblem(){
 
 }
-
-void MainWindow::addMenuOptions(){
-    ui->menuBarGame->addAction();
-}
-
-

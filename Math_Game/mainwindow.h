@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <cstdlib>
+#include <unistd.h>
 #include <time.h>
 
 namespace Ui {
@@ -24,16 +24,15 @@ public:
 private slots:
     void on_btnAnswer_clicked();
     void startGame();
-    void endGame();
+    void on_actionStart_Game_triggered();
 
 private:
     Ui::MainWindow *ui;
-
     void addMenuOptions();
 
 
 
-    int operand1, operand2, correctAnswer;
+    int operand1, operand2, correctAnswer, secondsRemaining;
 };
 
 #endif // MAINWINDOW_H
