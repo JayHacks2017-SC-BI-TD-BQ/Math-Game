@@ -23,8 +23,9 @@ int MainWindow::generateRandomNumber(int min, int max) const
 
 void MainWindow::on_btnAnswer_clicked()
 {
-    //ui->lblDisplay->setText(QString::number(generateRandomNumber(1,100))); //DEBUG
-    //displayProblem();
+    if(ui->txtAnswerInput->toPlainText() == QString::number(correctAnswer)){
+        ui->lblDisplay->setText("Correct!");
+    }
 }
 
 //int operand1, operand2, correctAnswer; //These are your integers.
@@ -51,13 +52,6 @@ void MainWindow::generateEasyDivisionProblem(){
     while((operand1 % operand2) != 0){
         operand1 = generateRandomNumber(1,100);
         operand2 = generateRandomNumber(1,100);
-    }
-    correctAnswer = operand1 / operand2;
-}
-void MainWindow::generateMediumDivisionProblem(){
-    while((operand1 % operand2) != 0){
-        operand1 = generateRandomNumber(10,1000);
-        operand2 = generateRandomNumber(10,1000);
     }
     correctAnswer = operand1 / operand2;
 }

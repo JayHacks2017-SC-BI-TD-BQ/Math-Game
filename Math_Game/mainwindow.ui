@@ -39,6 +39,9 @@
       <height>25</height>
      </rect>
     </property>
+    <property name="plainText">
+     <string>asdf</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="btnAnswer">
     <property name="enabled">
