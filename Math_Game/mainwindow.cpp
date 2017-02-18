@@ -27,9 +27,15 @@ void MainWindow::on_btnAnswer_clicked()
 //int operand1, operand2, correctAnswer; //These are your integers.
 void MainWindow::generateEasyAdditionProblem(){
     //Generate random 2 operands and create a correctAnswer using them
+<<<<<<< HEAD
 operand1 = generateRandomNumber(1,100);
 operand2 = generateRandomNumber(1,100);
 correctAnswer = operand1- operand2;
+=======
+    operand1 = generateRandomNumber(1,100);
+    operand2 = generateRandomNumber(1,100);
+    correctAnswer = operand1+operand2;
+>>>>>>> dcfb15418c09e3ed27d585a8abc207f729f09a90
 }
 
 void MainWindow::generateEasySubtractionProblem(){
