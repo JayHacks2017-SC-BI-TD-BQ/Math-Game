@@ -30,6 +30,15 @@ void MainWindow::on_btnAnswer_clicked()
     }
 }
 
+void MainWindow::on_btnNextProblem(CCmdUI* pCmdUI)
+{
+    if(ui->txtAnswerInput->text() == QString::number(correctAnswer)){
+        pCmdUI->Enable( TRUE );
+    }else{
+    pCmdUI->Enable( FALSE );
+    }
+}
+
 //int operand1, operand2, correctAnswer; //These are your integers.
 
 void MainWindow::generateEasyAdditionProblem(){
