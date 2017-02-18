@@ -105,9 +105,11 @@ void MainWindow::generateMediumSubtractionProblem(){
     correctAnswer = operand1- operand2;
 }
 void MainWindow::generateMediumMultiplicationProblem(){
-    operand1 = generateRandomNumber(1,1000);
-    operand2 = generateRandomNumber(1,1000);
-    correctAnswer = operand1 * operand2;
+    while ((operand1 == 0) || (operand2 == 0) || (operand1%10 == 0) || (operand2%10 == 0)) {
+        operand1 = generateRandomNumber(10,1000);
+        operand2 = generateRandomNumber(10,1000);
+        correctAnswer = operand1 * operand2;
+    }
 }
 
 void MainWindow::generateMediumDivisionProblem(){
@@ -116,6 +118,19 @@ void MainWindow::generateMediumDivisionProblem(){
         operand2 = generateRandomNumber(1,1000);
     }
     correctAnswer = operand1 / operand2;
+}
+
+<<<<<<< HEAD
+void MainWindow::generateHardAdditionProblem(){
+    operand1 = generateRandomNumber(1,10000);
+    operand2 = generateRandomNumber(1,10000);
+    correctAnswer = operand1+operand2;
+=======
+void MainWindow::generateHardMultiplicationProblem() {
+    while ((operand1 == 0) || (operand2 == 0) || (operand1%10 == 0) || (operand2%10 == 0)) {
+        operand1 = generateRandomNumber(100,1000);
+}
+>>>>>>> 87618275f6c4a2118c868a604984caa504cd5fef
 }
 
 void MainWindow::displayProblem(){
