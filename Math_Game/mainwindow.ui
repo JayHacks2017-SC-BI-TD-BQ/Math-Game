@@ -72,12 +72,28 @@
      <rect>
       <x>260</x>
       <y>70</y>
-      <width>301</width>
+      <width>101</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnNextProblem">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>70</y>
+      <width>211</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Next Problem</string>
     </property>
    </widget>
   </widget>

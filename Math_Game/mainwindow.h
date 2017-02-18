@@ -43,6 +43,8 @@ private slots:
     void on_actionMedium_5_triggered();
     void on_actionHard_5_triggered();
 
+    void on_btnNextProblem_clicked();
+
 private:
     Ui::MainWindow *ui;
 
