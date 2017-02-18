@@ -174,7 +174,7 @@ void MainWindow::generateProblem(){
 
 
 void MainWindow::displayProblem(){
-    ui->lblDisplay->setText(QString::number(operand1) + operatorSign + QString::number(operand2));
+    ui->lblDisplay->setText("What is: " + QString::number(operand1) + " " + operatorSign + " " + QString::number(operand2));
 }
 
 void MainWindow::on_actionAddition_triggered()
@@ -251,4 +251,10 @@ void MainWindow::begin()
 void MainWindow::on_btnNextProblem_clicked()
 {
 
+}
+
+void MainWindow::on_btnGetCorrectAnswer_clicked()
+{
+    QString QstrCorrectAnswer = QString::number(correctAnswer);
+    ui->txtAnswerInput->setText(QstrCorrectAnswer);
 }
