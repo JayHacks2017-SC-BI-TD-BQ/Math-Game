@@ -51,6 +51,8 @@ void MainWindow::generateEasyMultiplicationProblem(){
 }
 
 void MainWindow::generateEasyDivisionProblem(){
+    operand1 = generateRandomNumber(1,100);
+    operand2 = generateRandomNumber(1,100);
     while((operand2 == 0) || (operand1 % operand2) != 0){
         operand1 = generateRandomNumber(1,100);
         operand2 = generateRandomNumber(1,100);
@@ -76,6 +78,8 @@ void MainWindow::generateMediumMultiplicationProblem(){
 }
 
 void MainWindow::generateMediumDivisionProblem(){
+    operand1 = generateRandomNumber(1,100);
+    operand2 = generateRandomNumber(1,100);
     while((operand1 % operand2) != 0){
         operand1 = generateRandomNumber(1,1000);
         operand2 = generateRandomNumber(1,1000);
@@ -101,6 +105,8 @@ void MainWindow::generateHardMultiplicationProblem(){
 }
 
 void MainWindow::generateHardDivisionProblem(){
+    operand1 = generateRandomNumber(1,100);
+    operand2 = generateRandomNumber(1,100);
     while((operand1 % operand2) != 0){
         operand1 = generateRandomNumber(1,10000);
         operand2 = generateRandomNumber(1,10000);
@@ -212,5 +218,10 @@ void MainWindow::begin()
     displayProblem();
     ui->txtAnswerInput->setEnabled(true);
     ui->btnAnswer->setEnabled(true);
+
+}
+
+void MainWindow::on_btnNextProblem_clicked()
+{
 
 }
