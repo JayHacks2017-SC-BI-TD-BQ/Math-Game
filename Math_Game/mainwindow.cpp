@@ -55,6 +55,14 @@ void MainWindow::generateEasyDivisionProblem(){
     correctAnswer = operand1 / operand2;
 }
 
+void MainWindow::generateMediumMultiplicationProblem(){
+  while((operand1 == 0) || (operand2 == 0) || (operand1%10 == 0) || (operand2%10 == 0)) {
+      operand1 = generateRandomNumber(10,1000);
+      operand2 = generateRandomNumber(10,1000);
+  }
+  correctAnswer = operand1 * operand2;
+}
+
 void MainWindow::displayProblem(){
     ui->lblDisplay->setText(QString::number(operand1) + operatorSign + QString::number(operand2));
 }
