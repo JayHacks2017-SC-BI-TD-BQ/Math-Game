@@ -25,18 +25,19 @@ void MainWindow::on_btnAnswer_clicked()
 {
     if(ui->txtAnswerInput->text() == QString::number(correctAnswer)){
         ui->lblCorrect->setText("Correct!");
+        ui->btnNextProblem->setEnabled(true);
     }else{
         ui->lblCorrect->setText("Wrong!");
     }
 }
 
-void MainWindow::on_btnNextProblem(CCmdUI* pCmdUI)
+void MainWindow::on_btnNextProblem_clicked()
 {
-    if(ui->txtAnswerInput->text() == QString::number(correctAnswer)){
-        pCmdUI->Enable( TRUE );
-    }else{
-    pCmdUI->Enable( FALSE );
-    }
+    generateProblem();
+    displayProblem();
+    ui->lblCorrect->setText("");
+    ui->txtAnswerInput->setText("");
+    ui->btnNextProblem->setEnabled(false);
 }
 
 //int operand1, operand2, correctAnswer; //These are your integers.
@@ -216,13 +217,14 @@ void MainWindow::on_actionDivision_triggered()
     if(difficulty != ""){
         begin();
     }
-{
+}
+        /*
     operatorSign = "^";
         if(difficulty != ""){
             begin();
         }
 }
-
+*/
 
 void MainWindow::on_actionEasy_5_triggered()
 {
@@ -257,10 +259,6 @@ void MainWindow::begin()
 
 }
 
-void MainWindow::on_btnNextProblem_clicked()
-{
-
-}
 
 void MainWindow::on_btnGetCorrectAnswer_clicked()
 {
