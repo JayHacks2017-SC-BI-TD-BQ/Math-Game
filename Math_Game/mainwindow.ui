@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>620</width>
-    <height>155</height>
+    <width>643</width>
+    <height>147</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>10</x>
       <y>10</y>
       <width>591</width>
-      <height>61</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -126,8 +126,9 @@
    <addaction name="separator"/>
    <addaction name="actionAddition"/>
    <addaction name="actionSubstraction"/>
-   <addaction name="actionMultiplication"/>
    <addaction name="actionDivision"/>
+   <addaction name="actionMultiplication"/>
+   <addaction name="actionExponent"/>
   </widget>
   <action name="actionEasy_5">
    <property name="text">
@@ -162,6 +163,14 @@
   <action name="actionDivision">
    <property name="text">
     <string>Division</string>
+   </property>
+  </action>
+  <action name="actionExponent">
+   <property name="text">
+    <string>Exponent</string>
+   </property>
+   <property name="toolTip">
+    <string>Exponent</string>
    </property>
   </action>
  </widget>
