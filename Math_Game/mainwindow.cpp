@@ -23,3 +23,12 @@ void MainWindow::on_btnAnswer_clicked()
 {
     //ui->lblDisplay->setText(QString::number(generateRandomNumber(1,100))); //DEBUG
 }
+void MainWindow::generateEasyAdditionProblem(){
+    //Generate random 2 operands and create a correctAnswer using them
+}
+void MainWindow::generateEasySubtractionProblem(){
+
+}
+void MainWindow::generateEasyMultiplicationProblem(){
+
+}
