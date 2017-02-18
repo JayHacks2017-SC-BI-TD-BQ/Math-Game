@@ -110,6 +110,7 @@ public:
         actionMultiplication->setText(QApplication::translate("MainWindow", "Multiplication", Q_NULLPTR));
         actionDivision->setText(QApplication::translate("MainWindow", "Division", Q_NULLPTR));
         lblDisplay->setText(QApplication::translate("MainWindow", "Please start a game with a selected difficulty in the menu.", Q_NULLPTR));
+        txtAnswerInput->setPlainText(QApplication::translate("MainWindow", "asdf", Q_NULLPTR));
         btnAnswer->setText(QApplication::translate("MainWindow", "Answer", Q_NULLPTR));
         menuDifficulty->setTitle(QApplication::translate("MainWindow", "Difficulty", Q_NULLPTR));
         menuMenu->setTitle(QApplication::translate("MainWindow", "Operator Sign", Q_NULLPTR));

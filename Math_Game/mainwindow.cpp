@@ -23,8 +23,9 @@ int MainWindow::generateRandomNumber(int min, int max) const
 
 void MainWindow::on_btnAnswer_clicked()
 {
-    //ui->lblDisplay->setText(QString::number(generateRandomNumber(1,100))); //DEBUG
-    //displayProblem();
+    if(ui->txtAnswerInput->toPlainText() == QString::number(correctAnswer)){
+        ui->lblDisplay("Correct!");
+    }
 }
 
 //int operand1, operand2, correctAnswer; //These are your integers.
