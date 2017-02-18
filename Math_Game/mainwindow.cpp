@@ -22,6 +22,8 @@ int MainWindow::generateRandomNumber(int min, int max) const
 void MainWindow::on_btnAnswer_clicked()
 {
     //ui->lblDisplay->setText(QString::number(generateRandomNumber(1,100))); //DEBUG
+    operand1 = generateRandomNumber(1,100);
+    operand2 = generateRandomNumber(1,100);
     displayProblem();
 }
 
@@ -52,7 +54,7 @@ void MainWindow::generateEasyDivisionProblem(){
 }
 
 void MainWindow::displayProblem(){
-    ui->lblDisplay->setText(operand1 + operatorSign + operand2);
+    ui->lblDisplay->setText(QString::number(operand1) + operatorSign + QString::number(operand2));
 }
 
 void MainWindow::on_actionAddition_triggered()
