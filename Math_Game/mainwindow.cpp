@@ -49,7 +49,7 @@ void MainWindow::generateEasyMultiplicationProblem(){
 }
 
 void MainWindow::generateEasyDivisionProblem(){
-    while((operand1 % operand2) != 0){
+    while((operand2 == 0) || (operand1 % operand2) != 0){
         operand1 = generateRandomNumber(1,100);
         operand2 = generateRandomNumber(1,100);
     }
@@ -83,9 +83,9 @@ void MainWindow::generateProblem(){
        }
    }else if(operatorSign == "/"){
        if(difficulty == "easy"){
-
+            generateEasyDivisionProblem();
        }else if(difficulty == "medium"){
-
+            generateMediumDivisionProblem();
        }else if(difficulty == "hard"){
 
        }
@@ -111,7 +111,7 @@ void MainWindow::generateMediumMultiplicationProblem(){
 }
 
 void MainWindow::generateMediumDivisionProblem(){
-    while((operand1 % operand2) != 0){
+    while((operand2 == 0) || (operand1 % operand2) != 0){
         operand1 = generateRandomNumber(1,1000);
         operand2 = generateRandomNumber(1,1000);
     }
