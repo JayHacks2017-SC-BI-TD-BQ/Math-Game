@@ -59,6 +59,12 @@ void MainWindow::generateEasyDivisionProblem(){
     }
     correctAnswer = operand1 / operand2;
 }
+void MainWindow::generateEasyExponentProblem(){
+    operand1 = generateRandomNumber(1,10);
+    operand2 = generateRandomNumber(1,10);
+    correctAnswer = operand1^operand2;
+}
+
 void MainWindow::generateMediumAdditionProblem(){
     //Generate random 2 operands and create a correctAnswer using them
     operand1 = generateRandomNumber(1,1000);
@@ -86,7 +92,11 @@ void MainWindow::generateMediumDivisionProblem(){
     }
     correctAnswer = operand1 / operand2;
 }
-
+void MainWindow::generateMediumExponentProblem(){
+    operand1 = generateRandomNumber(1,100);
+    operand2 = generateRandomNumber(1,100);
+    correctAnswer = operand1^operand2;
+}
 void MainWindow::generateHardAdditionProblem(){
     //Generate random 2 operands and create a correctAnswer using them
     operand1 = generateRandomNumber(1,10000);
@@ -113,7 +123,11 @@ void MainWindow::generateHardDivisionProblem(){
     }
     correctAnswer = operand1 / operand2;
 }
-
+void MainWindow::generateHardExponentProblem(){
+    operand1 = generateRandomNumber(1,1000);
+    operand2 = generateRandomNumber(1,1000);
+    correctAnswer = operand1^operand2;
+}
 void MainWindow::generateProblem(){
    if(operatorSign == "+"){
        if(difficulty == "easy"){
@@ -146,6 +160,14 @@ void MainWindow::generateProblem(){
             generateMediumDivisionProblem();
        }else if(difficulty == "hard"){
             generateHardDivisionProblem();
+       }
+   }else if(operatorSign == "^"){
+       if(difficulty == "easy"){
+            generateEasyExponentProblem();
+       }else if(difficulty == "medium"){
+            generateMediumExponentProblem();
+       }else if(difficulty == "hard"){
+            generateHardExponentProblem();
        }
    }
 }
@@ -185,6 +207,11 @@ void MainWindow::on_actionDivision_triggered()
     if(difficulty != ""){
         begin();
     }
+{
+    operatorSign = "^";
+        if(difficulty != ""){
+            begin();
+        }
 }
 
 
@@ -224,4 +251,10 @@ void MainWindow::begin()
 void MainWindow::on_btnNextProblem_clicked()
 {
 
+}
+
+void MainWindow::on_btnGetCorrectAnswer_clicked()
+{
+    QString QstrCorrectAnswer = QString::number(correctAnswer);
+    ui->txtAnswerInput->setText(QstrCorrectAnswer);
 }
