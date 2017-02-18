@@ -82,9 +82,9 @@ void MainWindow::generateProblem(){
        }
    }else if(operatorSign == "*"){
        if(difficulty == "easy"){
-
+            generateEasyMultiplicationProblem();
        }else if(difficulty == "medium"){
-
+            generateMediumMultiplicationProblem();
        }else if(difficulty == "hard"){
 
        }
