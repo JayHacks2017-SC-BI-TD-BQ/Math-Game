@@ -30,9 +30,7 @@ public:
     void generateHardMultiplicationProblem();
     void generateHardDivisionProblem();
     void generateProblem();
-
     void displayProblem();
-    void generateHardMultiplicationProblem();
     void begin();
 
 private slots:
