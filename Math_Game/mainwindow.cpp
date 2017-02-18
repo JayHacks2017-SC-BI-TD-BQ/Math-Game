@@ -152,7 +152,7 @@ void MainWindow::generateProblem(){
 
 
 void MainWindow::displayProblem(){
-    ui->lblDisplay->setText(QString::number(operand1) + operatorSign + QString::number(operand2));
+    ui->lblDisplay->setText("What is: " + QString::number(operand1) + " " + operatorSign + " " + QString::number(operand2));
 }
 
 void MainWindow::on_actionAddition_triggered()
