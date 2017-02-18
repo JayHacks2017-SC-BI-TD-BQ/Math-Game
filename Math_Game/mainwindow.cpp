@@ -24,7 +24,9 @@ int MainWindow::generateRandomNumber(int min, int max) const
 void MainWindow::on_btnAnswer_clicked()
 {
     if(ui->txtAnswerInput->text() == QString::number(correctAnswer)){
-        ui->lblDisplay->setText("Correct!");
+        ui->lblCorrect->setText("Correct!");
+    }else{
+        ui->lblCorrect->setText("Wrong!");
     }
 }
 
