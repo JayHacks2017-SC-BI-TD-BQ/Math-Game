@@ -55,12 +55,39 @@ void MainWindow::generateEasyDivisionProblem(){
     correctAnswer = operand1 / operand2;
 }
 
+<<<<<<< HEAD
 void MainWindow::generateMediumMultiplicationProblem(){
   while((operand1 == 0) || (operand2 == 0) || (operand1%10 == 0) || (operand2%10 == 0)) {
       operand1 = generateRandomNumber(10,1000);
       operand2 = generateRandomNumber(10,1000);
   }
   correctAnswer = operand1 * operand2;
+=======
+void MainWindow::generateMediumAdditionProblem(){
+    //Generate random 2 operands and create a correctAnswer using them
+    operand1 = generateRandomNumber(1,1000);
+    operand2 = generateRandomNumber(1,1000);
+    correctAnswer = operand1+operand2;
+}
+
+void MainWindow::generateMediumSubtractionProblem(){
+    operand1 = generateRandomNumber(1,1000);
+    operand2 = generateRandomNumber(1,1000);
+    correctAnswer = operand1- operand2;
+}
+void MainWindow::generateMediumMultiplicationProblem(){
+    operand1 = generateRandomNumber(1,1000);
+    operand2 = generateRandomNumber(1,1000);
+    correctAnswer = operand1 * operand2;
+}
+
+void MainWindow::generateMediumDivisionProblem(){
+    while((operand1 % operand2) != 0){
+        operand1 = generateRandomNumber(1,1000);
+        operand2 = generateRandomNumber(1,1000);
+    }
+    correctAnswer = operand1 / operand2;
+>>>>>>> a3641a98924484559895b0b60a9208fa7e50c097
 }
 
 void MainWindow::displayProblem(){
