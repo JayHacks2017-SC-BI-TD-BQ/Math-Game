@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>583</width>
-    <height>207</height>
+    <width>502</width>
+    <height>188</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,9 +28,12 @@
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="txtAnswerInput">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>180</x>
       <y>130</y>
       <width>211</width>
       <height>25</height>
@@ -38,9 +41,12 @@
     </property>
    </widget>
    <widget class="QPushButton" name="btnAnswer">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>400</x>
       <y>130</y>
       <width>89</width>
       <height>25</height>
@@ -56,7 +62,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>583</width>
+     <width>502</width>
      <height>22</height>
     </rect>
    </property>

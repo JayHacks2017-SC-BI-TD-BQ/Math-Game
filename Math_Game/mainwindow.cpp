@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     srand(time(NULL));
     ui->setupUi(this);
+    operatorSign = "";
+    difficulty = "";
 }
 
 MainWindow::~MainWindow()
@@ -22,9 +24,7 @@ int MainWindow::generateRandomNumber(int min, int max) const
 void MainWindow::on_btnAnswer_clicked()
 {
     //ui->lblDisplay->setText(QString::number(generateRandomNumber(1,100))); //DEBUG
-    operand1 = generateRandomNumber(1,100);
-    operand2 = generateRandomNumber(1,100);
-    displayProblem();
+    //displayProblem();
 }
 
 //int operand1, operand2, correctAnswer; //These are your integers.
@@ -54,6 +54,49 @@ void MainWindow::generateEasyDivisionProblem(){
     }
     correctAnswer = operand1 / operand2;
 }
+void MainWindow::generateMediumDivisionProblem(){
+    while((operand1 % operand2) != 0){
+        operand1 = generateRandomNumber(10,1000);
+        operand2 = generateRandomNumber(10,1000);
+    }
+    correctAnswer = operand1 / operand2;
+}
+
+void MainWindow::generateProblem(){
+   if(operatorSign == "+"){
+       if(difficulty == "easy"){
+
+       }else if(difficulty == "medium"){
+
+       }else if(difficulty == "hard"){
+
+       }
+   }else if(operatorSign == "-"){
+       if(difficulty == "easy"){
+
+       }else if(difficulty == "medium"){
+
+       }else if(difficulty == "hard"){
+
+       }
+   }else if(operatorSign == "*"){
+       if(difficulty == "easy"){
+
+       }else if(difficulty == "medium"){
+
+       }else if(difficulty == "hard"){
+
+       }
+   }else if(operatorSign == "/"){
+       if(difficulty == "easy"){
+
+       }else if(difficulty == "medium"){
+
+       }else if(difficulty == "hard"){
+
+       }
+   }
+}
 
 void MainWindow::displayProblem(){
     ui->lblDisplay->setText(QString::number(operand1) + operatorSign + QString::number(operand2));
@@ -62,19 +105,65 @@ void MainWindow::displayProblem(){
 void MainWindow::on_actionAddition_triggered()
 {
     operatorSign = "+";
+    if(difficulty != ""){
+        begin();
+    }
 }
 
 void MainWindow::on_actionSubstraction_triggered()
 {
     operatorSign = "-";
+    if(difficulty != ""){
+        begin();
+    }
 }
 
 void MainWindow::on_actionMultiplication_triggered()
 {
     operatorSign = "*";
+    if(difficulty != ""){
+        begin();
+    }
 }
 
 void MainWindow::on_actionDivision_triggered()
 {
     operatorSign = "/";
+    if(difficulty != ""){
+        begin();
+    }
+}
+
+
+void MainWindow::on_actionEasy_5_triggered()
+{
+    difficulty = "easy";
+    if(operatorSign != ""){
+        begin();
+    }
+}
+
+void MainWindow::on_actionMedium_5_triggered()
+{
+    difficulty = "medium";
+    if(operatorSign != ""){
+        begin();
+    }
+}
+
+void MainWindow::on_actionHard_5_triggered()
+{
+    difficulty = "hard";
+    if(operatorSign != ""){
+        begin();
+    }
+}
+
+void MainWindow::begin()
+{
+    generateProblem();
+    displayProblem();
+    ui->txtAnswerInput->setEnabled(true);
+    ui->btnAnswer->setEnabled(true);
+
 }

@@ -46,7 +46,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(583, 207);
+        MainWindow->resize(502, 188);
         actionEasy_5 = new QAction(MainWindow);
         actionEasy_5->setObjectName(QStringLiteral("actionEasy_5"));
         actionMedium_5 = new QAction(MainWindow);
@@ -68,14 +68,16 @@ public:
         lblDisplay->setGeometry(QRect(10, 10, 561, 20));
         txtAnswerInput = new QPlainTextEdit(centralWidget);
         txtAnswerInput->setObjectName(QStringLiteral("txtAnswerInput"));
-        txtAnswerInput->setGeometry(QRect(130, 130, 211, 25));
+        txtAnswerInput->setEnabled(false);
+        txtAnswerInput->setGeometry(QRect(180, 130, 211, 25));
         btnAnswer = new QPushButton(centralWidget);
         btnAnswer->setObjectName(QStringLiteral("btnAnswer"));
-        btnAnswer->setGeometry(QRect(350, 130, 89, 25));
+        btnAnswer->setEnabled(false);
+        btnAnswer->setGeometry(QRect(400, 130, 89, 25));
         MainWindow->setCentralWidget(centralWidget);
         menuBarGame = new QMenuBar(MainWindow);
         menuBarGame->setObjectName(QStringLiteral("menuBarGame"));
-        menuBarGame->setGeometry(QRect(0, 0, 583, 22));
+        menuBarGame->setGeometry(QRect(0, 0, 502, 22));
         menuDifficulty = new QMenu(menuBarGame);
         menuDifficulty->setObjectName(QStringLiteral("menuDifficulty"));
         menuMenu = new QMenu(menuBarGame);
