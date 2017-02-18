@@ -55,6 +55,56 @@ void MainWindow::generateEasyDivisionProblem(){
     }
     correctAnswer = operand1 / operand2;
 }
+void MainWindow::generateMediumAdditionProblem(){
+    //Generate random 2 operands and create a correctAnswer using them
+    operand1 = generateRandomNumber(1,1000);
+    operand2 = generateRandomNumber(1,1000);
+    correctAnswer = operand1+operand2;
+}
+
+void MainWindow::generateMediumSubtractionProblem(){
+    operand1 = generateRandomNumber(1,1000);
+    operand2 = generateRandomNumber(1,1000);
+    correctAnswer = operand1- operand2;
+}
+void MainWindow::generateMediumMultiplicationProblem(){
+    operand1 = generateRandomNumber(1,1000);
+    operand2 = generateRandomNumber(1,1000);
+    correctAnswer = operand1 * operand2;
+}
+
+void MainWindow::generateMediumDivisionProblem(){
+    while((operand1 % operand2) != 0){
+        operand1 = generateRandomNumber(1,1000);
+        operand2 = generateRandomNumber(1,1000);
+    }
+    correctAnswer = operand1 / operand2;
+}
+
+void MainWindow::generateHardAdditionProblem(){
+    //Generate random 2 operands and create a correctAnswer using them
+    operand1 = generateRandomNumber(1,10000);
+    operand2 = generateRandomNumber(1,10000);
+    correctAnswer = operand1+operand2;
+}
+void MainWindow::generateHardSubtractionProblem(){
+    operand1 = generateRandomNumber(1,10000);
+    operand2 = generateRandomNumber(1,10000);
+    correctAnswer = operand1- operand2;
+}
+void MainWindow::generateHardMultiplicationProblem(){
+    operand1 = generateRandomNumber(1,10000);
+    operand2 = generateRandomNumber(1,10000);
+    correctAnswer = operand1 * operand2;
+}
+
+void MainWindow::generateHardDivisionProblem(){
+    while((operand1 % operand2) != 0){
+        operand1 = generateRandomNumber(1,10000);
+        operand2 = generateRandomNumber(1,10000);
+    }
+    correctAnswer = operand1 / operand2;
+}
 
 void MainWindow::generateProblem(){
    if(operatorSign == "+"){
@@ -120,6 +170,7 @@ void MainWindow::generateMediumDivisionProblem(){
     correctAnswer = operand1 / operand2;
 }
 
+<<<<<<< HEAD
 
 void MainWindow::generateHardAdditionProblem(){
     operand1 = generateRandomNumber(1,10000);
@@ -132,6 +183,8 @@ void MainWindow::generateHardMultiplicationProblem() {
         operand1 = generateRandomNumber(100,1000);
     }
 }
+=======
+>>>>>>> b429bf622e259543ce1bebf584a9c909ef213753
 
 void MainWindow::displayProblem(){
     ui->lblDisplay->setText(QString::number(operand1) + operatorSign + QString::number(operand2));
