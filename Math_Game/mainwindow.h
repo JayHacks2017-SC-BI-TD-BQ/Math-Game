@@ -21,9 +21,11 @@ public:
     void generateEasySubtractionProblem();
     void generateEasyMultiplicationProblem();
     void generateEasyDivisionProblem();
+    void generateMediumAdditionProblem();
+    void generateMediumSubtractionProblem();
+    void generateMediumMultiplicationProblem();
     void generateMediumDivisionProblem();
     void generateProblem();
-    void generateMediumMultiplicationProblem();
     void displayProblem();
     void begin();
 
