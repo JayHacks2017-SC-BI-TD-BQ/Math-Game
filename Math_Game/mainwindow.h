@@ -35,19 +35,12 @@ public:
 
 private slots:
     void on_btnAnswer_clicked();
-
     void on_actionAddition_triggered();
-
     void on_actionSubstraction_triggered();
-
     void on_actionMultiplication_triggered();
-
     void on_actionDivision_triggered();
-
     void on_actionEasy_5_triggered();
-
     void on_actionMedium_5_triggered();
-
     void on_actionHard_5_triggered();
 
 private:
