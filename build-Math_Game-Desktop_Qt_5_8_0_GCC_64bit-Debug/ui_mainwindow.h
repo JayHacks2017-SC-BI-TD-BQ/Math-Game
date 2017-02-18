@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -27,8 +28,9 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QPushButton *btnGenerateProblem;
     QLabel *lblDisplay;
+    QPlainTextEdit *txtAnswerInput;
+    QPushButton *btnAnswer;
     QToolBar *toolBar;
     QMenuBar *menuBar;
 
@@ -36,22 +38,25 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(400, 200);
+        MainWindow->resize(583, 207);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        btnGenerateProblem = new QPushButton(centralWidget);
-        btnGenerateProblem->setObjectName(QStringLiteral("btnGenerateProblem"));
-        btnGenerateProblem->setGeometry(QRect(10, 140, 150, 20));
         lblDisplay = new QLabel(centralWidget);
         lblDisplay->setObjectName(QStringLiteral("lblDisplay"));
-        lblDisplay->setGeometry(QRect(10, 10, 380, 20));
+        lblDisplay->setGeometry(QRect(10, 10, 561, 20));
+        txtAnswerInput = new QPlainTextEdit(centralWidget);
+        txtAnswerInput->setObjectName(QStringLiteral("txtAnswerInput"));
+        txtAnswerInput->setGeometry(QRect(130, 130, 211, 25));
+        btnAnswer = new QPushButton(centralWidget);
+        btnAnswer->setObjectName(QStringLiteral("btnAnswer"));
+        btnAnswer->setGeometry(QRect(350, 130, 89, 25));
         MainWindow->setCentralWidget(centralWidget);
         toolBar = new QToolBar(MainWindow);
         toolBar->setObjectName(QStringLiteral("toolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 22));
+        menuBar->setGeometry(QRect(0, 0, 583, 22));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);
@@ -62,8 +67,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Math Game", Q_NULLPTR));
-        btnGenerateProblem->setText(QApplication::translate("MainWindow", "Generate Problem", Q_NULLPTR));
-        lblDisplay->setText(QApplication::translate("MainWindow", "Please generate a problem.", Q_NULLPTR));
+        lblDisplay->setText(QApplication::translate("MainWindow", "Please start a game with a selected difficulty in the menu.", Q_NULLPTR));
+        btnAnswer->setText(QApplication::translate("MainWindow", "Answer", Q_NULLPTR));
         toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", Q_NULLPTR));
     } // retranslateUi
 
