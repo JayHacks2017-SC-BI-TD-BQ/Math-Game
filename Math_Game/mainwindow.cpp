@@ -40,7 +40,9 @@ void MainWindow::generateEasySubtractionProblem(){
     correctAnswer = operand1- operand2;
 }
 void MainWindow::generateEasyMultiplicationProblem(){
-
+    operand1 = generateRandomNumber(1,100);
+    operand2 = generateRandomNumber(1,100);
+    correctAnswer = operand1 * operand2;
 }
 
 void MainWindow::generateEasyDivisionProblem(){
