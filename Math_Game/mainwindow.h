@@ -45,6 +45,8 @@ private slots:
 
     void on_btnNextProblem_clicked();
 
+    void on_btnGetCorrectAnswer_clicked();
+
 private:
     Ui::MainWindow *ui;
 

@@ -225,3 +225,9 @@ void MainWindow::on_btnNextProblem_clicked()
 {
 
 }
+
+void MainWindow::on_btnGetCorrectAnswer_clicked()
+{
+    QString QstrCorrectAnswer = QString::number(correctAnswer);
+    ui->txtAnswerInput->setText(QstrCorrectAnswer);
+}
