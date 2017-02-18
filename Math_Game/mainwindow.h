@@ -52,7 +52,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    void addMenuOptions();
 
 
 
