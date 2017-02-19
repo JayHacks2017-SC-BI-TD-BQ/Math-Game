@@ -17,12 +17,11 @@ public:
     explicit Statistics(QWidget *parent = 0);
     ~Statistics();
     void labelUpdate(int c, int w);
-
-
-private slots:
+    void displaySeconds(int s);
 
 private:
     Ui::Statistics *ui;
+    int seconds;
 };
 
 #endif // STATISTICS_H

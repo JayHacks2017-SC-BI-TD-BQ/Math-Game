@@ -6,6 +6,7 @@
 #include <time.h>
 #include <math.h>
 #include "statistics.h"
+#include <QTimer>
 
 namespace Ui {
 class MainWindow;
@@ -51,12 +52,17 @@ private slots:
     void on_btnGetCorrectAnswer_clicked();
     void on_actionExponent_triggered();
     void on_btnStatistics_clicked();
+    void incrementSeconds();
+
+signals:
+    void timeout();
 
 private:
     Ui::MainWindow *ui;
-    int operand1, operand2, correctAnswer, correctNumber, wrongNumber;
+    int operand1, operand2, correctAnswer, correctNumber, wrongNumber, seconds;
     Statistics statistics;
     QString difficulty, operatorSign, record;
+    QTimer* timer;
 };
 
 #endif // MAINWINDOW_H

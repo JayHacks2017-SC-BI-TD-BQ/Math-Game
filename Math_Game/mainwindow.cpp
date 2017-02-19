@@ -12,6 +12,17 @@ MainWindow::MainWindow(QWidget *parent) :
     //Initializes the variables
     correctNumber=0;
     wrongNumber=0;
+    //Creates a new timer.
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(incrementSeconds()));
+    timer->start(1000);
+}
+
+void MainWindow::incrementSeconds()
+{
+    //Updates the seconds elapsed.
+    seconds++;
+    statistics.displaySeconds(seconds);
 }
 
 MainWindow::~MainWindow()
