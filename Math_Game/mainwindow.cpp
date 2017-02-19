@@ -1,10 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+
     srand(time(NULL));
     ui->setupUi(this);
     operatorSign = "";
@@ -273,4 +276,9 @@ void MainWindow::on_actionExponent_triggered()
     if(difficulty != ""){
         begin();
     }
+}
+
+void MainWindow::on_btnStatistics_clicked()
+{
+    statistics.show();
 }

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>631</width>
-    <height>155</height>
+    <width>632</width>
+    <height>165</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -107,6 +107,19 @@
     </property>
     <property name="text">
      <string>Get Correct Answer</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnStatistics">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>611</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>See Statistics</string>
     </property>
    </widget>
   </widget>
