@@ -52,6 +52,7 @@ void MainWindow::on_btnNextProblem_clicked()
     ui->txtAnswerInput->setText("");
     ui->btnNextProblem->setEnabled(false);
     ui->btnAnswer->setEnabled(true);
+    ui->btnGetCorrectAnswer->setEnabled(true);
 }
 
 //int operand1, operand2, correctAnswer; //These are your integers.
@@ -279,6 +280,7 @@ void MainWindow::on_btnGetCorrectAnswer_clicked()
     QString QstrCorrectAnswer = QString::number(correctAnswer);
     ui->txtAnswerInput->setText(QstrCorrectAnswer);
     wrongNumber=wrongNumber+1;
+    ui->btnGetCorrectAnswer->setEnabled(false);
 }
 
 
