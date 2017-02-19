@@ -280,19 +280,15 @@ void MainWindow::on_btnGetCorrectAnswer_clicked()
 }
 
 
-/*void MainWindow::on_actionExponent_triggered()
+void MainWindow::on_actionExponent_triggered()
 {
     operatorSign = "^";
     if(difficulty != ""){
         begin();
     }
 }
-<<<<<<< HEAD
-*/
-=======
 
 void MainWindow::on_btnStatistics_clicked()
 {
     statistics.show();
 }
->>>>>>> bb38a560fdea97693c2a1cfba7c63c063ff419a8
