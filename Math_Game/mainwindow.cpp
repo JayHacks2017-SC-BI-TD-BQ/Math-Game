@@ -32,14 +32,15 @@ void MainWindow::on_btnAnswer_clicked()
     if(ui->txtAnswerInput->text() == QString::number(correctAnswer)){
         ui->lblCorrect->setText("Correct!");
         ui->btnNextProblem->setEnabled(true);
-        do {
-
-        } while {
         correctNumber=correctNumber+1;
+        ui->btnAnswer->setEnabled(false);
+        ui->btnNextProblem->setEnabled(true);
 
     }else{
         ui->lblCorrect->setText("Wrong!");
         wrongNumber=wrongNumber+1;
+        ui->btnAnswer->setEnabled(false);
+        ui->btnNextProblem->setEnabled(true);
     }
 }
 
@@ -50,6 +51,7 @@ void MainWindow::on_btnNextProblem_clicked()
     ui->lblCorrect->setText("");
     ui->txtAnswerInput->setText("");
     ui->btnNextProblem->setEnabled(false);
+    ui->btnAnswer->setEnabled(true);
 }
 
 //int operand1, operand2, correctAnswer; //These are your integers.
@@ -280,19 +282,18 @@ void MainWindow::on_btnGetCorrectAnswer_clicked()
 }
 
 
-/*void MainWindow::on_actionExponent_triggered()
+void MainWindow::on_actionExponent_triggered()
 {
     operatorSign = "^";
     if(difficulty != ""){
         begin();
     }
 }
-<<<<<<< HEAD
-*/
-=======
+
+
 
 void MainWindow::on_btnStatistics_clicked()
 {
     statistics.show();
 }
->>>>>>> bb38a560fdea97693c2a1cfba7c63c063ff419a8
+
