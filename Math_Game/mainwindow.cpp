@@ -265,6 +265,8 @@ void MainWindow::on_actionMedium_5_triggered()
 
 void MainWindow::on_actionHard_5_triggered()
 {
+    ui->actionMedium_5->setCheckable(false);
+    ui->actionEasy_5->setCheckable(false);
     difficulty = "hard";
     if(operatorSign != ""){
         begin();

@@ -47,25 +47,15 @@ private slots:
     void on_actionEasy_5_triggered();
     void on_actionMedium_5_triggered();
     void on_actionHard_5_triggered();
-
     void on_btnNextProblem_clicked();
-
     void on_btnGetCorrectAnswer_clicked();
-
     void on_actionExponent_triggered();
-
     void on_btnStatistics_clicked();
 
 private:
     Ui::MainWindow *ui;
-
-
-
-
     int operand1, operand2, correctAnswer, correctNumber, wrongNumber, counter;
-
     Statistics statistics;
-
     QString difficulty, operatorSign;
 };
 
