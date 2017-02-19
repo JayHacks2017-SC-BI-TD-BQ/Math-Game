@@ -59,6 +59,7 @@ void MainWindow::on_btnNextProblem_clicked()
 //int operand1, operand2, correctAnswer; //These are your integers.
 
 //Generate random 2 operands and create a correctAnswer using them
+//The division problems are generated in a way that prevents them from having remainders when divided
 void MainWindow::generateEasyAdditionProblem(){
     operand1 = generateRandomNumber(0,100);
     operand2 = generateRandomNumber(0,100);
@@ -74,7 +75,6 @@ void MainWindow::generateEasyMultiplicationProblem(){
     operand2 = generateRandomNumber(0,10);
     correctAnswer = operand1*operand2;
 }
-
 void MainWindow::generateEasyDivisionProblem(){
     operand1 = generateRandomNumber(1,100);
     operand2 = generateRandomNumber(1,10);
@@ -90,7 +90,6 @@ void MainWindow::generateEasyExponentProblem(){
     correctAnswer = pow(operand1, operand2);
 }
 void MainWindow::generateMediumAdditionProblem(){
-    //Generate random 2 operands and create a correctAnswer using them
     operand1 = generateRandomNumber(1,1000);
     operand2 = generateRandomNumber(1,1000);
     correctAnswer = operand1+operand2;
@@ -120,7 +119,6 @@ void MainWindow::generateMediumExponentProblem(){
     correctAnswer = pow(operand1, operand2);
 }
 void MainWindow::generateHardAdditionProblem(){
-    //Generate random 2 operands and create a correctAnswer using them
     operand1 = generateRandomNumber(1,10000);
     operand2 = generateRandomNumber(1,10000);
     correctAnswer = operand1+operand2;
@@ -150,8 +148,10 @@ void MainWindow::generateHardExponentProblem(){
     correctAnswer = pow(operand1, operand2);
 }
 
+
 void MainWindow::generateProblem(){
     //Problem generation will vary with the operator sign and difficulty
+    //Follow the decision structure.
    if(operatorSign == "+"){
        if(difficulty == "easy"){
             generateEasyAdditionProblem();
@@ -193,10 +193,12 @@ void MainWindow::generateProblem(){
             generateHardExponentProblem();
        }
    }
+
    //enable and disable certain buttons
    ui->btnAnswer->setEnabled(true);
    ui->btnGetCorrectAnswer->setEnabled(true);
    ui->btnNextProblem->setEnabled(false);
+
    //clear correct and answerInput.
    ui->lblCorrect->setText("");
    ui->txtAnswerInput->setText("");
@@ -204,10 +206,11 @@ void MainWindow::generateProblem(){
 
 
 void MainWindow::displayProblem(){
-    //Displays the problem.
+    //Displays the problem using the label display.
     ui->lblDisplay->setText("What is: " + QString::number(operand1) + " " + operatorSign + " " + QString::number(operand2));
 }
 
+//These actions modify the operationSign and the difficulty
 void MainWindow::on_actionAddition_triggered()
 {
     operatorSign = "+";
@@ -219,7 +222,6 @@ void MainWindow::on_actionAddition_triggered()
     ui->actionDivision->setChecked(false);
     ui->actionExponent->setChecked(false);
 }
-
 void MainWindow::on_actionSubstraction_triggered()
 {
     operatorSign = "-";
@@ -231,7 +233,6 @@ void MainWindow::on_actionSubstraction_triggered()
     ui->actionDivision->setChecked(false);
     ui->actionExponent->setChecked(false);
 }
-
 void MainWindow::on_actionMultiplication_triggered()
 {
     operatorSign = "*";
@@ -243,7 +244,6 @@ void MainWindow::on_actionMultiplication_triggered()
     ui->actionDivision->setChecked(false);
     ui->actionExponent->setChecked(false);
 }
-
 void MainWindow::on_actionDivision_triggered()
 {
     //Sets the operator sign as division
@@ -256,68 +256,6 @@ void MainWindow::on_actionDivision_triggered()
     ui->actionMultiplication->setChecked(false);
     ui->actionExponent->setChecked(false);
 }
-        /*
-    operatorSign = "^";
-        if(difficulty != ""){
-            begin();
-        }
-}
-*/
-
-void MainWindow::on_actionEasy_5_triggered()
-{
-    difficulty = "easy";
-    if(operatorSign != ""){
-        begin();
-    }
-    ui->actionMedium_5->setChecked(false);
-    ui->actionHard_5->setChecked(false);
-}
-
-void MainWindow::on_actionMedium_5_triggered()
-{
-    difficulty = "medium";
-    if(operatorSign != ""){
-        begin();
-    }
-    ui->actionEasy_5->setChecked(false);
-    ui->actionHard_5->setChecked(false);
-}
-
-void MainWindow::on_actionHard_5_triggered()
-{
-    difficulty = "hard";
-    if(operatorSign != ""){
-        begin();
-    }
-    ui->actionMedium_5->setCheckable(false);
-    ui->actionEasy_5->setCheckable(false);
-}
-
-void MainWindow::begin()
-{
-    generateProblem();
-    displayProblem();
-    ui->txtAnswerInput->setEnabled(true);
-
-}
-void MainWindow::on_btnGetCorrectAnswer_clicked()
-{
-    QString QstrCorrectAnswer = QString::number(correctAnswer);
-    ui->txtAnswerInput->setText(QstrCorrectAnswer);
-    if(ui->lblCorrect->text() != "Wrong!"){
-        //increment wrongNumber and update statistics
-        wrongNumber=wrongNumber+1;
-        ui->lblCorrect->setText("Gave up!");
-        statistics.labelUpdate(correctNumber,wrongNumber);
-    }
-    ui->btnGetCorrectAnswer->setEnabled(false);
-    ui->btnAnswer->setEnabled(false);
-    ui->btnNextProblem->setEnabled(true);
-
-}
-
-
 void MainWindow::on_actionExponent_triggered()
 {
     operatorSign = "^";
@@ -329,8 +267,63 @@ void MainWindow::on_actionExponent_triggered()
     ui->actionMultiplication->setChecked(false);
     ui->actionDivision->setChecked(false);
 }
+void MainWindow::on_actionEasy_5_triggered()
+{
+    difficulty = "easy";
+    if(operatorSign != ""){
+        begin();
+    }
+    ui->actionMedium_5->setChecked(false);
+    ui->actionHard_5->setChecked(false);
+}
+void MainWindow::on_actionMedium_5_triggered()
+{
+    difficulty = "medium";
+    if(operatorSign != ""){
+        begin();
+    }
+    ui->actionEasy_5->setChecked(false);
+    ui->actionHard_5->setChecked(false);
+}
+void MainWindow::on_actionHard_5_triggered()
+{
+    difficulty = "hard";
+    if(operatorSign != ""){
+        begin();
+    }
+    ui->actionMedium_5->setCheckable(false);
+    ui->actionEasy_5->setCheckable(false);
+}
+
+
+void MainWindow::on_btnGetCorrectAnswer_clicked()
+{
+    //Set the text input as the correct answer.
+    QString QstrCorrectAnswer = QString::number(correctAnswer);
+    ui->txtAnswerInput->setText(QstrCorrectAnswer);
+    if(ui->lblCorrect->text() != "Wrong!"){
+        //increment wrongNumber and update statistics
+        wrongNumber=wrongNumber+1;
+        statistics.labelUpdate(correctNumber,wrongNumber);
+        //The player did not get it wrong. They gave up.
+        ui->lblCorrect->setText("Gave up!");
+    }
+    //Adjusts some button ableness.
+    ui->btnGetCorrectAnswer->setEnabled(false);
+    ui->btnAnswer->setEnabled(false);
+    ui->btnNextProblem->setEnabled(true);
+
+}
 void MainWindow::on_btnStatistics_clicked()
 {
+    //Show the statistics
     statistics.show();
-    statistics.labelUpdate(correctNumber,wrongNumber);
+}
+void MainWindow::begin()
+{
+    //Begins the process of problem generation
+    generateProblem();
+    displayProblem();
+    ui->txtAnswerInput->setEnabled(true);
+
 }
