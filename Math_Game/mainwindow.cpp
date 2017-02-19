@@ -7,11 +7,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-
-    srand(time(NULL));
-    ui->setupUi(this);
-    operatorSign = "";
-    difficulty = "";
+    srand(time(NULL));  //This creates a random seed.
+    ui->setupUi(this); //Sets up the UI
+    //Initializes the correct and wrong count
     correctNumber=0;
     wrongNumber=0;
     counter=0;
@@ -24,18 +22,22 @@ MainWindow::~MainWindow()
 
 int MainWindow::generateRandomNumber(int min, int max) const
 {
+    //Returns a random number between min and max.
     return ((rand() % ((max+1)-min)) + min);
 }
 
 void MainWindow::on_btnAnswer_clicked()
 {
     if(ui->txtAnswerInput->text() == QString::number(correctAnswer)){
+        //If the answer is correct, let the user know.
         ui->lblCorrect->setText("Correct!");
-        ui->btnNextProblem->setEnabled(true);
+        //Increment the correctNumber by 1
         correctNumber=correctNumber+1;
-        ui->btnAnswer->setEnabled(false);
+        //Make certain buttons usable/unusable
         ui->btnNextProblem->setEnabled(true);
-
+        ui->btnAnswer->setEnabled(false);
+        ui->btnGetCorrectAnswer->setEnabled(false);
+        ui->btnNextProblem->setEnabled(true);
     }else{
         ui->lblCorrect->setText("Wrong!");
         wrongNumber=wrongNumber+1;
@@ -52,6 +54,7 @@ void MainWindow::on_btnNextProblem_clicked()
     ui->txtAnswerInput->setText("");
     ui->btnNextProblem->setEnabled(false);
     ui->btnAnswer->setEnabled(true);
+    ui->btnGetCorrectAnswer->setEnabled(true);
 }
 
 //int operand1, operand2, correctAnswer; //These are your integers.
