@@ -70,8 +70,8 @@ void MainWindow::generateEasyDivisionProblem(){
     correctAnswer = operand1 / operand2;
 }
 void MainWindow::generateEasyExponentProblem(){
-    operand1 = generateRandomNumber(1,10);
-    operand2 = generateRandomNumber(1,10);
+    operand1 = generateRandomNumber(1,3);
+    operand2 = generateRandomNumber(1,3);
     correctAnswer = pow(operand1, operand2);
 }
 
@@ -103,8 +103,8 @@ void MainWindow::generateMediumDivisionProblem(){
     correctAnswer = operand1 / operand2;
 }
 void MainWindow::generateMediumExponentProblem(){
-    operand1 = generateRandomNumber(1,100);
-    operand2 = generateRandomNumber(1,100);
+    operand1 = generateRandomNumber(1,5);
+    operand2 = generateRandomNumber(1,5);
     correctAnswer = pow(operand1, operand2);
 }
 void MainWindow::generateHardAdditionProblem(){
@@ -134,8 +134,8 @@ void MainWindow::generateHardDivisionProblem(){
     correctAnswer = operand1 / operand2;
 }
 void MainWindow::generateHardExponentProblem(){
-    operand1 = generateRandomNumber(1,1000);
-    operand2 = generateRandomNumber(1,1000);
+    operand1 = generateRandomNumber(1,10);
+    operand2 = generateRandomNumber(1,10);
     correctAnswer = pow(operand1, operand2);
 }
 void MainWindow::generateProblem(){
@@ -251,18 +251,13 @@ void MainWindow::on_actionHard_5_triggered()
 }
 
 void MainWindow::begin()
-
+{
     generateProblem();
     displayProblem();
     ui->txtAnswerInput->setEnabled(true);
     ui->btnAnswer->setEnabled(true);
 
 }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 0b4b05d293f2f37eaa9b0ee9f63657e4d80bdba5
 void MainWindow::on_btnGetCorrectAnswer_clicked()
 {
     QString QstrCorrectAnswer = QString::number(correctAnswer);
