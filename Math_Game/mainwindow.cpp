@@ -212,6 +212,10 @@ void MainWindow::on_actionAddition_triggered()
     if(difficulty != ""){
         begin();
     }
+    ui->actionSubstraction->setChecked(false);
+    ui->actionMultiplication->setChecked(false);
+    ui->actionDivision->setChecked(false);
+    ui->actionExponent->setChecked(false);
 }
 
 void MainWindow::on_actionSubstraction_triggered()
@@ -220,6 +224,10 @@ void MainWindow::on_actionSubstraction_triggered()
     if(difficulty != ""){
         begin();
     }
+    ui->actionAddition->setChecked(false);
+    ui->actionMultiplication->setChecked(false);
+    ui->actionDivision->setChecked(false);
+    ui->actionExponent->setChecked(false);
 }
 
 void MainWindow::on_actionMultiplication_triggered()
@@ -228,6 +236,10 @@ void MainWindow::on_actionMultiplication_triggered()
     if(difficulty != ""){
         begin();
     }
+    ui->actionAddition->setChecked(false);
+    ui->actionSubstraction->setChecked(false);
+    ui->actionDivision->setChecked(false);
+    ui->actionExponent->setChecked(false);
 }
 
 void MainWindow::on_actionDivision_triggered()
@@ -236,6 +248,10 @@ void MainWindow::on_actionDivision_triggered()
     if(difficulty != ""){
         begin();
     }
+    ui->actionAddition->setChecked(false);
+    ui->actionSubstraction->setChecked(false);
+    ui->actionMultiplication->setChecked(false);
+    ui->actionExponent->setChecked(false);
 }
         /*
     operatorSign = "^";
@@ -261,6 +277,8 @@ void MainWindow::on_actionMedium_5_triggered()
     if(operatorSign != ""){
         begin();
     }
+    ui->actionEasy_5->setChecked(false);
+    ui->actionHard_5->setChecked(false);
 }
 
 void MainWindow::on_actionHard_5_triggered()
@@ -271,6 +289,8 @@ void MainWindow::on_actionHard_5_triggered()
     if(operatorSign != ""){
         begin();
     }
+    ui->actionMedium_5->setChecked(false);
+    ui->actionHard_5->setChecked(false);
 }
 
 void MainWindow::begin()
@@ -295,6 +315,10 @@ void MainWindow::on_actionExponent_triggered()
     if(difficulty != ""){
         begin();
     }
+    ui->actionAddition->setChecked(false);
+    ui->actionSubstraction->setChecked(false);
+    ui->actionMultiplication->setChecked(false);
+    ui->actionDivision->setChecked(false);
 }
 void MainWindow::on_btnStatistics_clicked()
 {
