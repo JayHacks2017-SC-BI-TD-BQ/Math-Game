@@ -66,33 +66,33 @@ void MainWindow::on_btnNextProblem_clicked()
 
 //Generate random 2 operands and create a correctAnswer using them
 void MainWindow::generateEasyAdditionProblem(){
-    operand1 = generateRandomNumber(1,100);
-    operand2 = generateRandomNumber(1,100);
+    operand1 = generateRandomNumber(0,100);
+    operand2 = generateRandomNumber(0,100);
     correctAnswer = operand1+operand2;
 }
 void MainWindow::generateEasySubtractionProblem(){
-    operand1 = generateRandomNumber(1,100);
-    operand2 = generateRandomNumber(1,100);
+    operand1 = generateRandomNumber(0,100);
+    operand2 = generateRandomNumber(0,100);
     correctAnswer = operand1-operand2;
 }
 void MainWindow::generateEasyMultiplicationProblem(){
-    operand1 = generateRandomNumber(1,100);
-    operand2 = generateRandomNumber(1,100);
+    operand1 = generateRandomNumber(0,10);
+    operand2 = generateRandomNumber(0,10);
     correctAnswer = operand1*operand2;
 }
 
 void MainWindow::generateEasyDivisionProblem(){
     operand1 = generateRandomNumber(1,100);
-    operand2 = generateRandomNumber(1,100);
+    operand2 = generateRandomNumber(1,10);
     while((operand2 == 0) || (operand1 % operand2) != 0){
         operand1 = generateRandomNumber(1,100);
-        operand2 = generateRandomNumber(1,100);
+        operand2 = generateRandomNumber(1,10);
     }
     correctAnswer = operand1 / operand2;
 }
 void MainWindow::generateEasyExponentProblem(){
-    operand1 = generateRandomNumber(1,3);
-    operand2 = generateRandomNumber(1,3);
+    operand1 = generateRandomNumber(1,9);
+    operand2 = generateRandomNumber(2,3);
     correctAnswer = pow(operand1, operand2);
 }
 void MainWindow::generateMediumAdditionProblem(){
@@ -107,22 +107,22 @@ void MainWindow::generateMediumSubtractionProblem(){
     correctAnswer = operand1- operand2;
 }
 void MainWindow::generateMediumMultiplicationProblem(){
-    operand1 = generateRandomNumber(1,1000);
-    operand2 = generateRandomNumber(1,1000);
+    operand1 = generateRandomNumber(0,100);
+    operand2 = generateRandomNumber(0,10);
     correctAnswer = operand1 * operand2;
 }
 void MainWindow::generateMediumDivisionProblem(){
-    operand1 = generateRandomNumber(1,100);
-    operand2 = generateRandomNumber(1,100);
+    operand1 = generateRandomNumber(1,1000);
+    operand2 = generateRandomNumber(2,100);
     while((operand1 % operand2) != 0){
         operand1 = generateRandomNumber(1,1000);
-        operand2 = generateRandomNumber(1,1000);
+        operand2 = generateRandomNumber(2,100);
     }
     correctAnswer = operand1 / operand2;
 }
 void MainWindow::generateMediumExponentProblem(){
-    operand1 = generateRandomNumber(1,5);
-    operand2 = generateRandomNumber(1,5);
+    operand1 = generateRandomNumber(1,20);
+    operand2 = generateRandomNumber(2,4);
     correctAnswer = pow(operand1, operand2);
 }
 void MainWindow::generateHardAdditionProblem(){
@@ -137,22 +137,22 @@ void MainWindow::generateHardSubtractionProblem(){
     correctAnswer = operand1- operand2;
 }
 void MainWindow::generateHardMultiplicationProblem(){
-    operand1 = generateRandomNumber(1,10000);
-    operand2 = generateRandomNumber(1,10000);
+    operand1 = generateRandomNumber(1,100);
+    operand2 = generateRandomNumber(1,100);
     correctAnswer = operand1 * operand2;
 }
 void MainWindow::generateHardDivisionProblem(){
-    operand1 = generateRandomNumber(1,100);
-    operand2 = generateRandomNumber(1,100);
+    operand1 = generateRandomNumber(1,1000);
+    operand2 = generateRandomNumber(11,100);
     while((operand1 % operand2) != 0){
-        operand1 = generateRandomNumber(1,10000);
-        operand2 = generateRandomNumber(1,10000);
+        operand1 = generateRandomNumber(1,1000);
+        operand2 = generateRandomNumber(11,100);
     }
     correctAnswer = operand1 / operand2;
 }
 void MainWindow::generateHardExponentProblem(){
-    operand1 = generateRandomNumber(1,10);
-    operand2 = generateRandomNumber(1,10);
+    operand1 = generateRandomNumber(1,30);
+    operand2 = generateRandomNumber(2,6);
     correctAnswer = pow(operand1, operand2);
 }
 
