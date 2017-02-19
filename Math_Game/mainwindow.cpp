@@ -9,6 +9,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     operatorSign = "";
     difficulty = "";
+    correctNumber=0;
+    wrongNumber=0;
+    counter=0;
 }
 
 MainWindow::~MainWindow()
@@ -26,8 +29,14 @@ void MainWindow::on_btnAnswer_clicked()
     if(ui->txtAnswerInput->text() == QString::number(correctAnswer)){
         ui->lblCorrect->setText("Correct!");
         ui->btnNextProblem->setEnabled(true);
+        do {
+
+        } while {
+        correctNumber=correctNumber+1;
+
     }else{
         ui->lblCorrect->setText("Wrong!");
+        wrongNumber=wrongNumber+1;
     }
 }
 
@@ -264,13 +273,15 @@ void MainWindow::on_btnGetCorrectAnswer_clicked()
 {
     QString QstrCorrectAnswer = QString::number(correctAnswer);
     ui->txtAnswerInput->setText(QstrCorrectAnswer);
+    wrongNumber=wrongNumber+1;
 }
 
 
-void MainWindow::on_actionExponent_triggered()
+/*void MainWindow::on_actionExponent_triggered()
 {
     operatorSign = "^";
     if(difficulty != ""){
         begin();
     }
 }
+*/

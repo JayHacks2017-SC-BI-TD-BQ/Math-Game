@@ -56,7 +56,7 @@ private:
 
 
 
-    int operand1, operand2, correctAnswer;
+    int operand1, operand2, correctAnswer, correctNumber, wrongNumber, counter;
     QString difficulty, operatorSign;
 };
 
