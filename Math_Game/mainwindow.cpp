@@ -50,10 +50,13 @@ void MainWindow::on_btnAnswer_clicked()
 
 void MainWindow::on_btnNextProblem_clicked()
 {
+    //Generate and display new problem.
     generateProblem();
     displayProblem();
+    //Empty answerInput and correct indicator
     ui->lblCorrect->setText("");
     ui->txtAnswerInput->setText("");
+    //Disable/Enable certain buttons
     ui->btnNextProblem->setEnabled(false);
     ui->btnAnswer->setEnabled(true);
     ui->btnGetCorrectAnswer->setEnabled(true);
@@ -61,13 +64,12 @@ void MainWindow::on_btnNextProblem_clicked()
 
 //int operand1, operand2, correctAnswer; //These are your integers.
 
+//Generate random 2 operands and create a correctAnswer using them
 void MainWindow::generateEasyAdditionProblem(){
-    //Generate random 2 operands and create a correctAnswer using them
     operand1 = generateRandomNumber(1,100);
     operand2 = generateRandomNumber(1,100);
     correctAnswer = operand1+operand2;
 }
-
 void MainWindow::generateEasySubtractionProblem(){
     operand1 = generateRandomNumber(1,100);
     operand2 = generateRandomNumber(1,100);
@@ -93,14 +95,12 @@ void MainWindow::generateEasyExponentProblem(){
     operand2 = generateRandomNumber(1,3);
     correctAnswer = pow(operand1, operand2);
 }
-
 void MainWindow::generateMediumAdditionProblem(){
     //Generate random 2 operands and create a correctAnswer using them
     operand1 = generateRandomNumber(1,1000);
     operand2 = generateRandomNumber(1,1000);
     correctAnswer = operand1+operand2;
 }
-
 void MainWindow::generateMediumSubtractionProblem(){
     operand1 = generateRandomNumber(1,1000);
     operand2 = generateRandomNumber(1,1000);
@@ -111,7 +111,6 @@ void MainWindow::generateMediumMultiplicationProblem(){
     operand2 = generateRandomNumber(1,1000);
     correctAnswer = operand1 * operand2;
 }
-
 void MainWindow::generateMediumDivisionProblem(){
     operand1 = generateRandomNumber(1,100);
     operand2 = generateRandomNumber(1,100);
@@ -142,7 +141,6 @@ void MainWindow::generateHardMultiplicationProblem(){
     operand2 = generateRandomNumber(1,10000);
     correctAnswer = operand1 * operand2;
 }
-
 void MainWindow::generateHardDivisionProblem(){
     operand1 = generateRandomNumber(1,100);
     operand2 = generateRandomNumber(1,100);
@@ -157,7 +155,9 @@ void MainWindow::generateHardExponentProblem(){
     operand2 = generateRandomNumber(1,10);
     correctAnswer = pow(operand1, operand2);
 }
+
 void MainWindow::generateProblem(){
+    //Problem generation will vary with the operator sign and difficulty
    if(operatorSign == "+"){
        if(difficulty == "easy"){
             generateEasyAdditionProblem();
@@ -203,6 +203,7 @@ void MainWindow::generateProblem(){
 
 
 void MainWindow::displayProblem(){
+    //Displays the problem.
     ui->lblDisplay->setText("What is: " + QString::number(operand1) + " " + operatorSign + " " + QString::number(operand2));
 }
 
@@ -232,6 +233,7 @@ void MainWindow::on_actionMultiplication_triggered()
 
 void MainWindow::on_actionDivision_triggered()
 {
+    //Sets the operator sign as division
     operatorSign = "/";
     if(difficulty != ""){
         begin();
@@ -286,6 +288,7 @@ void MainWindow::on_btnGetCorrectAnswer_clicked()
     QString QstrCorrectAnswer = QString::number(correctAnswer);
     ui->txtAnswerInput->setText(QstrCorrectAnswer);
     wrongNumber=wrongNumber+1;
+     ui->btnGetCorrectAnswer->setEnabled(false);
 }
 
 
