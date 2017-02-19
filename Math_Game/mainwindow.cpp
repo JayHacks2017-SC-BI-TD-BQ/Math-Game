@@ -39,7 +39,9 @@ void MainWindow::on_btnAnswer_clicked()
         ui->btnGetCorrectAnswer->setEnabled(false);
         ui->btnNextProblem->setEnabled(true);
     }else{
+        //If the answer is Wrong, let the user know.
         ui->lblCorrect->setText("Wrong!");
+        //Increment the wrongNumber by 1
         wrongNumber=wrongNumber+1;
         ui->btnAnswer->setEnabled(false);
         ui->btnNextProblem->setEnabled(true);
@@ -292,18 +294,8 @@ void MainWindow::on_actionExponent_triggered()
         begin();
     }
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 9d1374b94ef1ec5f5b9ee55c03fe177aa319ed7d
-
 void MainWindow::on_btnStatistics_clicked()
 {
     statistics.show();
     statistics.labelUpdate(correctNumber,wrongNumber);
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 9d1374b94ef1ec5f5b9ee55c03fe177aa319ed7d
