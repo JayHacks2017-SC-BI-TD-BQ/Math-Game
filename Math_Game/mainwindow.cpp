@@ -9,10 +9,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     srand(time(NULL));  //This creates a random seed.
     ui->setupUi(this); //Sets up the UI
-    //Initializes the correct and wrong count
+    //Initializes the variables
     correctNumber=0;
     wrongNumber=0;
-    counter=0;
 }
 
 MainWindow::~MainWindow()
@@ -309,12 +308,13 @@ void MainWindow::on_btnGetCorrectAnswer_clicked()
     if(ui->lblCorrect->text() != "Wrong!"){
         //increment wrongNumber and update statistics
         wrongNumber=wrongNumber+1;
+        ui->lblCorrect->setText("Gave up!");
         statistics.labelUpdate(correctNumber,wrongNumber);
     }
     ui->btnGetCorrectAnswer->setEnabled(false);
     ui->btnAnswer->setEnabled(false);
     ui->btnNextProblem->setEnabled(true);
-    ui->lblCorrect->setText("Gave up!");
+
 }
 
 

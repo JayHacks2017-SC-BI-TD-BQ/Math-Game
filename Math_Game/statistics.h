@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QLabel>
 
+
 namespace Ui {
 class Statistics;
 }
@@ -17,6 +18,8 @@ public:
     ~Statistics();
     void labelUpdate(int c, int w);
 
+
+private slots:
 
 private:
     Ui::Statistics *ui;

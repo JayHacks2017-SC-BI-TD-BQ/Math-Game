@@ -54,9 +54,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    int operand1, operand2, correctAnswer, correctNumber, wrongNumber, counter;
+    int operand1, operand2, correctAnswer, correctNumber, wrongNumber;
     Statistics statistics;
-    QString difficulty, operatorSign;
+    QString difficulty, operatorSign, record;
 };
 
 #endif // MAINWINDOW_H
