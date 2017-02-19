@@ -295,5 +295,6 @@ void MainWindow::on_actionExponent_triggered()
 void MainWindow::on_btnStatistics_clicked()
 {
     statistics.show();
+    statistics.labelUpdate(correctNumber,wrongNumber);
 }
 
