@@ -232,6 +232,8 @@ void MainWindow::on_actionEasy_5_triggered()
     if(operatorSign != ""){
         begin();
     }
+    ui->actionMedium_5->setChecked(false);
+    ui->actionHard_5->setChecked(false);
 }
 
 void MainWindow::on_actionMedium_5_triggered()
