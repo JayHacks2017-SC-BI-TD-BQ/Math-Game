@@ -31,18 +31,20 @@ void MainWindow::on_btnAnswer_clicked()
     if(ui->txtAnswerInput->text() == QString::number(correctAnswer)){
         //If the answer is correct, let the user know.
         ui->lblCorrect->setText("Correct!");
-        //Increment the correctNumber by 1
+        //Increment the correctNumber by 1 and update statistics
         correctNumber=correctNumber+1;
+        statistics.labelUpdate(correctNumber,wrongNumber);
         //Make certain buttons usable/unusable
-        ui->btnNextProblem->setEnabled(true);
         ui->btnAnswer->setEnabled(false);
         ui->btnGetCorrectAnswer->setEnabled(false);
         ui->btnNextProblem->setEnabled(true);
     }else{
         //If the answer is Wrong, let the user know.
         ui->lblCorrect->setText("Wrong!");
-        //Increment the wrongNumber by 1
+        //Increment the wrongNumber by 1 and update statistics
         wrongNumber=wrongNumber+1;
+        statistics.labelUpdate(correctNumber,wrongNumber);
+        //disable and enable certain buttions
         ui->btnAnswer->setEnabled(false);
         ui->btnNextProblem->setEnabled(true);
     }
@@ -53,13 +55,6 @@ void MainWindow::on_btnNextProblem_clicked()
     //Generate and display new problem.
     generateProblem();
     displayProblem();
-    //Empty answerInput and correct indicator
-    ui->lblCorrect->setText("");
-    ui->txtAnswerInput->setText("");
-    //Disable/Enable certain buttons
-    ui->btnNextProblem->setEnabled(false);
-    ui->btnAnswer->setEnabled(true);
-    ui->btnGetCorrectAnswer->setEnabled(true);
 }
 
 //int operand1, operand2, correctAnswer; //These are your integers.
@@ -199,8 +194,13 @@ void MainWindow::generateProblem(){
             generateHardExponentProblem();
        }
    }
-
+   //enable and disable certain buttons
+   ui->btnAnswer->setEnabled(true);
    ui->btnGetCorrectAnswer->setEnabled(true);
+   ui->btnNextProblem->setEnabled(false);
+   //clear correct and answerInput.
+   ui->lblCorrect->setText("");
+   ui->txtAnswerInput->setText("");
 }
 
 
@@ -300,7 +300,6 @@ void MainWindow::begin()
     generateProblem();
     displayProblem();
     ui->txtAnswerInput->setEnabled(true);
-    ui->btnAnswer->setEnabled(true);
 
 }
 void MainWindow::on_btnGetCorrectAnswer_clicked()
@@ -308,7 +307,9 @@ void MainWindow::on_btnGetCorrectAnswer_clicked()
     QString QstrCorrectAnswer = QString::number(correctAnswer);
     ui->txtAnswerInput->setText(QstrCorrectAnswer);
     if(ui->lblCorrect->text() != "Wrong!"){
+        //increment wrongNumber and update statistics
         wrongNumber=wrongNumber+1;
+        statistics.labelUpdate(correctNumber,wrongNumber);
     }
     ui->btnGetCorrectAnswer->setEnabled(false);
     ui->btnAnswer->setEnabled(false);
