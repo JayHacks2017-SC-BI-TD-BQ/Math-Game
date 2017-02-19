@@ -6,8 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>631</width>
     <height>168</height>
+=======
+    <width>632</width>
+    <height>165</height>
+>>>>>>> bb38a560fdea97693c2a1cfba7c63c063ff419a8
    </rect>
   </property>
   <property name="windowTitle">
@@ -107,6 +112,19 @@
     </property>
     <property name="text">
      <string>Get Correct Answer</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnStatistics">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>611</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>See Statistics</string>
     </property>
    </widget>
   </widget>

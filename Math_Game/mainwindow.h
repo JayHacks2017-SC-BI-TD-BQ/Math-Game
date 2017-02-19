@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <math.h>
+#include "statistics.h"
 
 namespace Ui {
 class MainWindow;
@@ -51,12 +52,21 @@ private slots:
 
     void on_btnGetCorrectAnswer_clicked();
 
+    void on_actionExponent_triggered();
+
+    void on_btnStatistics_clicked();
+
 private:
     Ui::MainWindow *ui;
 
 
+<<<<<<< HEAD
 
     int operand1, operand2, correctAnswer, correctNumber, wrongNumber, counter;
+=======
+    Statistics statistics;
+    int operand1, operand2, correctAnswer;
+>>>>>>> bb38a560fdea97693c2a1cfba7c63c063ff419a8
     QString difficulty, operatorSign;
 };
 
