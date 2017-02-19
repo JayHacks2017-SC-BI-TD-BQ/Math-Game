@@ -199,6 +199,8 @@ void MainWindow::generateProblem(){
             generateHardExponentProblem();
        }
    }
+
+   ui->btnGetCorrectAnswer->setEnabled(true);
 }
 
 
@@ -285,14 +287,12 @@ void MainWindow::on_actionMedium_5_triggered()
 
 void MainWindow::on_actionHard_5_triggered()
 {
-    ui->actionMedium_5->setCheckable(false);
-    ui->actionEasy_5->setCheckable(false);
     difficulty = "hard";
     if(operatorSign != ""){
         begin();
     }
-    ui->actionMedium_5->setChecked(false);
-    ui->actionHard_5->setChecked(false);
+    ui->actionMedium_5->setCheckable(false);
+    ui->actionEasy_5->setCheckable(false);
 }
 
 void MainWindow::begin()
@@ -307,8 +307,13 @@ void MainWindow::on_btnGetCorrectAnswer_clicked()
 {
     QString QstrCorrectAnswer = QString::number(correctAnswer);
     ui->txtAnswerInput->setText(QstrCorrectAnswer);
-    wrongNumber=wrongNumber+1;
-     ui->btnGetCorrectAnswer->setEnabled(false);
+    if(ui->lblCorrect->text() != "Wrong!"){
+        wrongNumber=wrongNumber+1;
+    }
+    ui->btnGetCorrectAnswer->setEnabled(false);
+    ui->btnAnswer->setEnabled(false);
+    ui->btnNextProblem->setEnabled(true);
+    ui->lblCorrect->setText("Gave up!");
 }
 
 
