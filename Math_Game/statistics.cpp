@@ -5,7 +5,6 @@ Statistics::Statistics(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Statistics)
 {
-
     ui->setupUi(this);
 
 }
@@ -13,4 +12,9 @@ Statistics::Statistics(QWidget *parent) :
 Statistics::~Statistics()
 {
     delete ui;
+}
+void Statistics::labelUpdate(int c, int w)
+{
+    ui->lblCorrectCount->setText("Correct Answers: " + QString::number(c));
+    ui->lblIncorrectCount->setText("Incorrect Answers: " + QString::number(w));
 }
