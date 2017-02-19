@@ -292,12 +292,18 @@ void MainWindow::on_actionExponent_triggered()
         begin();
     }
 }
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 9d1374b94ef1ec5f5b9ee55c03fe177aa319ed7d
 
 void MainWindow::on_btnStatistics_clicked()
 {
     statistics.show();
     statistics.labelUpdate(correctNumber,wrongNumber);
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9d1374b94ef1ec5f5b9ee55c03fe177aa319ed7d

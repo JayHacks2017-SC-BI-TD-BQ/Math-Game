@@ -60,6 +60,12 @@ private:
     Ui::MainWindow *ui;
 
 
+<<<<<<< HEAD
+
+    int operand1, operand2, correctAnswer, correctNumber, wrongNumber, counter;
+    Statistics statistics;
+    int operand1, operand2, correctAnswer;
+=======
 
 
     int operand1, operand2, correctAnswer, correctNumber, wrongNumber, counter;
@@ -67,6 +73,7 @@ private:
     Statistics statistics;
 
 
+>>>>>>> 9d1374b94ef1ec5f5b9ee55c03fe177aa319ed7d
     QString difficulty, operatorSign;
 };
 
