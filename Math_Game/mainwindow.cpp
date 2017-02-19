@@ -70,9 +70,9 @@ void MainWindow::generateEasyDivisionProblem(){
     correctAnswer = operand1 / operand2;
 }
 void MainWindow::generateEasyExponentProblem(){
-    operand1 = generateRandomNumber(1,10);
-    operand2 = generateRandomNumber(1,10);
-    correctAnswer = operand1^operand2;
+    operand1 = generateRandomNumber(1,3);
+    operand2 = generateRandomNumber(1,3);
+    correctAnswer = pow(operand1, operand2);
 }
 
 void MainWindow::generateMediumAdditionProblem(){
@@ -103,9 +103,9 @@ void MainWindow::generateMediumDivisionProblem(){
     correctAnswer = operand1 / operand2;
 }
 void MainWindow::generateMediumExponentProblem(){
-    operand1 = generateRandomNumber(1,100);
-    operand2 = generateRandomNumber(1,100);
-    correctAnswer = operand1^operand2;
+    operand1 = generateRandomNumber(1,5);
+    operand2 = generateRandomNumber(1,5);
+    correctAnswer = pow(operand1, operand2);
 }
 void MainWindow::generateHardAdditionProblem(){
     //Generate random 2 operands and create a correctAnswer using them
@@ -134,9 +134,9 @@ void MainWindow::generateHardDivisionProblem(){
     correctAnswer = operand1 / operand2;
 }
 void MainWindow::generateHardExponentProblem(){
-    operand1 = generateRandomNumber(1,1000);
-    operand2 = generateRandomNumber(1,1000);
-    correctAnswer = operand1^operand2;
+    operand1 = generateRandomNumber(1,10);
+    operand2 = generateRandomNumber(1,10);
+    correctAnswer = pow(operand1, operand2);
 }
 void MainWindow::generateProblem(){
    if(operatorSign == "+"){
@@ -260,10 +260,9 @@ void MainWindow::begin()
     ui->btnAnswer->setEnabled(true);
 
 }
-
-
 void MainWindow::on_btnGetCorrectAnswer_clicked()
 {
     QString QstrCorrectAnswer = QString::number(correctAnswer);
     ui->txtAnswerInput->setText(QstrCorrectAnswer);
 }
+
