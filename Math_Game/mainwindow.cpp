@@ -266,3 +266,11 @@ void MainWindow::on_btnGetCorrectAnswer_clicked()
     ui->txtAnswerInput->setText(QstrCorrectAnswer);
 }
 
+
+void MainWindow::on_actionExponent_triggered()
+{
+    operatorSign = "^";
+    if(difficulty != ""){
+        begin();
+    }
+}
